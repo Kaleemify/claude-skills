@@ -5,6 +5,16 @@ description: Use when building a new website/page from scratch, or when auditing
 
 # Device-Consistent Design
 
+## Quick reference for scoping effort
+
+Not every invocation of this skill needs the full checklist below applied at equal depth. Match your depth of engagement to the task, per "Match the audit's scope to the request" under Working method:
+
+- **A narrow, single-element fix** (e.g. one button, one section's padding): the Core principle and the appropriateness check are what matter most — apply them to that element, its direct equivalents elsewhere, and the tier(s) actually implicated, not the whole site.
+- **Adding a new section or component to an existing site**: "How this applies depending on the situation" and "Recognizing drift" are the primary guide, so the new work matches what's already there.
+- **A full build, redesign, or whole-site audit**: the entire skill applies at full depth, in the order it's written.
+
+This is a map, not a substitute for the sections it points to — when in doubt, read the full section rather than relying on this summary alone.
+
 ## Purpose
 
 A site is being built or repaired. The requirement is that every visual and structural property of the page — typography, spacing, layout, components, media, performance — forms one coherent, deliberately-designed system per device tier, and that the system scales between tiers in a controlled, well-structured way rather than by accident.
@@ -45,9 +55,11 @@ This evaluation is not a desktop-only check. Evaluate appropriateness separately
 
 At every device/tier, this evaluation covers more than raw width, height, or element size. At minimum, check: padding, gaps, section spacing, container spacing, alignment, component proportions, button and input sizing, vertical rhythm, overall visual density, and any other sizing or spacing value that materially affects the design — evaluated against standards and context, not in isolation.
 
-Typography is not a single generic font-size rule to sanity-check once. Evaluate it by priority and hierarchy — primary heading, secondary heading, subheading, subtitle, body text, supporting text, labels, captions, button text, form text, and every other text role actually present (see the full role list under "What must be internally consistent" below) — each against what its own role and priority call for. One heading size must not be applied to every heading regardless of rank, and one paragraph style must not be applied to every kind of text regardless of role; size, weight, spacing, and visual importance must follow that specific text's role and priority, and stay logically consistent with every other element of the same role across the whole interface.
+Typography is not a single generic font-size rule to sanity-check once. Evaluate it by priority and hierarchy — every text role actually present, per the full role list under "What must be internally consistent" below — each against what its own role and priority call for. One heading size must not be applied to every heading regardless of rank, and one paragraph style must not be applied to every kind of text regardless of role; size, weight, spacing, and visual importance must follow that specific text's role and priority, and stay logically consistent with every other element of the same role across the whole interface.
 
 The adaptation from desktop toward tablet and mobile must be natural and proportional to each tier's own context — not everything mechanically shrunk by the same amount. Mechanically shrinking every value by a flat percentage is not the same thing as appropriate responsive design, even when the result happens to look internally consistent afterward.
+
+How exhaustively you apply this evaluation depends on the scope of the task (see "Match the audit's scope to the request" under Working method): a full build or full-site audit means checking every tier and every property above. A narrow, single-element request means applying this same rigor only to that element, its direct equivalents elsewhere on the page, and the tier(s) actually implicated by the request — not re-verifying every tier and every property across the whole site for an unrelated, narrowly-scoped change.
 
 Apply the judgment guidance below to this evaluation too: if evidence and context leave something genuinely unclear, ask. Do not interrupt over minor or obvious cases where the evidence already points clearly in one direction — resolve those and move on.
 
@@ -81,7 +93,7 @@ Do not design for "mobile," "tablet," and "desktop" as three flat buckets. Withi
 - **Tablet** — both the common average tablet sizes and portrait/landscape variation, treated as its own tier rather than a stretched phone layout or a shrunk desktop layout.
 - **Desktop / laptop** — the common range of laptop and desktop viewport widths, plus deliberate handling of very wide/large-desktop viewports so content does not stretch into an unreadable or unbalanced layout — a maximum-width system is expected, and it is acceptable for different content types (e.g. a full-bleed section vs. a narrow reading column vs. a wide media block) to have their own distinct maximum widths, as long as that variation is systematic and not arbitrary.
 
-Within every tier, decide breakpoints from the content and layout itself — where text actually wraps badly, where a grid actually gets too tight, where spacing actually starts to look wrong — not from a fixed, memorized list of device models. Use real, current data on common device/viewport clusters to sanity-check that decision, but let the content be the deciding authority. Every tier is subject to the appropriateness check above, individually — a tier does not pass just because it is internally coherent with itself; it must also hold up as reasonable for that device class.
+Within every tier, decide breakpoints from the content and layout itself — where text actually wraps badly, where a grid actually gets too tight, where spacing actually starts to look wrong — not from a fixed, memorized list of device models. Use real, current data on common device/viewport clusters to sanity-check that decision, but let the content be the deciding authority. Every tier is individually subject to the appropriateness check above — internal coherence within a tier is not enough on its own.
 
 ## Inventory real content before designing any scale
 
