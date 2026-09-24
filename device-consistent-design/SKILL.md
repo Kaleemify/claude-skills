@@ -1,6 +1,6 @@
 ---
 name: device-consistent-design
-description: Use when building a new website/page from scratch, or when auditing and fixing an existing one, to make typography, spacing, layout, components, media, and performance behave as one coherent system that is internally consistent within each device tier (narrow mobile, common mobile, tablet, desktop/laptop) and scales deliberately between tiers — instead of one device's sizing being inherited or stretched onto another. Also covers responsive media loading efficiency, accessibility, and full technical SEO / Core Web Vitals / Lighthouse compliance. Invoke by name when told to build, redesign, or fix a site "using this skill."
+description: Use when building a new website/page from scratch, or when auditing and fixing an existing one, to make typography, spacing, layout, components, media, and performance behave as one coherent system that is internally consistent within each device tier (narrow mobile, common mobile, tablet, desktop/laptop) and scales deliberately between tiers — instead of one device's sizing being inherited or stretched onto another. Also covers responsive media loading efficiency, accessibility, and full technical SEO / Core Web Vitals / Lighthouse compliance. Invoke by name when told to build, redesign, or fix a site "using this skill." Consistency here means one shared design system (type, spacing, color, components), never sections that look alike; each section keeps its own distinctive layout.
 ---
 
 # Device-Consistent Design
@@ -10,7 +10,7 @@ description: Use when building a new website/page from scratch, or when auditing
 This skill is split across this file and supporting files under `references/`, so a small task only has to load what it actually needs. Not every invocation needs every reference file read, and not every invocation needs the same depth. Match your depth of engagement — and which reference files you read — to the task:
 
 - **A narrow, single-element fix** (e.g. one button, one section's padding): the Core principle and "Consistency is necessary, but it is not sufficient" below cover what matters most. From `references/design-system-checklist.md`, read only the specific property/role involved (e.g. the one relevant bullet under "What must be internally consistent"), and apply it to that element, its direct equivalents elsewhere, and the tier(s) actually implicated — not the whole site.
-- **Adding a new section or component to an existing site, or repairing an inconsistent one**: read `references/design-system-checklist.md` in full — its "How this applies depending on the situation" and "Recognizing drift" sections are the primary guide, so the new or corrected work matches what's already there.
+- **Adding a new section or component to an existing site, or repairing an inconsistent one**: read `references/design-system-checklist.md` in full — its "How this applies depending on the situation" and "Recognizing drift" sections are the primary guide, so the new or corrected work shares the site's existing system (type, spacing, color, component styles) while its layout is designed fresh for its own content — see "Consistency is not sameness" below.
 - **Accessibility- or media-specific work**: read `references/accessibility-and-media.md`.
 - **SEO/Core Web Vitals work, or final verification of any implementation**: read `references/seo-and-verification.md`.
 - **A multi-session/ongoing project, or producing an audit report**: read `references/cross-session-and-reporting.md`.
@@ -20,7 +20,7 @@ This is a map, not a substitute for the files it points to — when in doubt, re
 
 ## Purpose
 
-A site is being built or repaired. The requirement is that every visual and structural property of the page — typography, spacing, layout, components, media, performance — forms one coherent, deliberately-designed system per device tier, and that the system scales between tiers in a controlled, well-structured way rather than by accident.
+A site is being built or repaired. The requirement is that every visual and structural property of the page — typography, spacing, layout, components, media, performance — forms one coherent, deliberately-designed system per device tier, and that the system scales between tiers in a controlled, well-structured way rather than by accident. A coherent system is the foundation for distinctive design, not a replacement for it — see "Consistency is not sameness" below.
 
 This skill does not hand you numbers. It does not tell you which pixel value, which CSS mechanism, which class name, or which variable-naming convention to use. Those choices belong to you, made fresh for the project in front of you, informed by that project's own content, brand, and density — and by current, real responsive-design and performance research at the time you do the work. What this skill fixes in place is the **shape of the requirement**: what must be internally consistent, at what granularity of device, and what "done" has to survive before you call it finished.
 
@@ -37,6 +37,8 @@ If anything about the project is ambiguous when you apply this skill — its dev
 
 Apply that principle to every property that can vary: font size, font weight, line height, letter spacing, padding, margin, gap, container width, gutter, border radius, component height, icon size, touch target size, image dimensions, z-index, motion timing, interaction states. If two elements carry the same role, they must look and behave the same. If a section's heading is smaller or larger than every other section's heading of the same rank, that is a defect unless there is a real, statable design reason for it.
 
+This principle governs those properties — it does not govern composition. Sections are not "the same role" merely because they are all sections: each section's layout, imagery treatment, and visual idea is designed for its own content (see "Consistency is not sameness" below).
+
 ## Consistency is necessary, but it is not sufficient on its own
 
 Being applied uniformly everywhere does not automatically make a value correct. A value can be perfectly consistent across an entire site and still be wrong for its role and device — for example, every heading on mobile can be the same size as every other mobile heading of that rank (fully consistent) while still being objectively oversized for a mobile screen; every section can use the same generous padding (fully consistent) while that padding is still too heavy for the content density of the page. Treat both questions as required, separately, every time:
@@ -51,6 +53,15 @@ This also governs how equivalence itself is judged: two elements are only the "s
 Priority ordering itself must also hold, not just per-role matching: a lower-priority text style (for example, a caption or a label) must not end up more visually prominent — larger, heavier, or higher-contrast — than a higher-priority style above it in the hierarchy (for example, the heading it supports), unless the design intentionally calls for that specific inversion. If scaling, editing, or a new addition causes that ordering to invert by accident, that is a defect even where each individual value looks reasonable in isolation.
 
 The full, evidence-based method for evaluating appropriateness — grounded in standards rather than gut-feel, checked per device tier and per property — is in `references/design-system-checklist.md`.
+
+## Consistency is not sameness
+
+Everything above makes the design *system* consistent: the type scale, spacing scale, color palette, component styling, container widths, and breakpoints. None of it asks sections to look alike. A site whose tokens are perfectly consistent but whose sections all share one layout is not well designed — it is a template, and it reads as generic.
+
+- **Tokens are shared; composition is not.** Each section gets its own layout, composition, imagery treatment, and visual idea, designed for what that section has to say. Two sections can share every token and still look completely different — on a well-designed site they usually do.
+- **Repetition is a defect.** Consecutive sections that repeat the same layout pattern (for example heading → paragraph → card grid, again and again) are a design defect in the same way inconsistent padding is. Catch it, report it, and fix it the same way.
+- **Standards are a floor, not a style.** The evidence-based checks in this skill — readability, contrast, touch targets, performance, appropriate sizing — set the minimum quality bar. They are never a reason to pull a distinctive, bold, or unconventional visual direction toward a safer, more conventional one. If a bold choice clears the floor, it stands.
+- **Look at it.** Design quality can only be judged by seeing the rendered result. For any work that creates or changes how a page looks, render it at each device tier, review the screenshots, and critique it honestly — distinctive and premium, or generic and repetitive? — and revise before calling it done.
 
 ## Judgment: when to ask, and when to just proceed
 
@@ -87,6 +98,6 @@ The detailed checklists this skill relies on live alongside this file, under `re
 2. **Match the audit's scope to the request.** For a broad task — building a new system, normalizing an existing one, or a general request to fix or review the design — audit the entire site before changing anything, and understand how the current system works and where it has drifted before touching a single value. For a narrow, specific request — a single element, a single section, one clearly-scoped fix — audit only that element and its directly relevant context (other instances of its own role, its immediate surroundings, and the tier behavior it needs to match), rather than the whole site. Only widen the audit if the narrow investigation itself surfaces a genuine system-wide problem.
 3. **Do not patch section by section.** A problem in one place is often evidence of a missing or broken system-wide rule — fix the rule, not just the symptom.
 4. **Design or normalize per tier, as one system**, using the Core principle above and the device-tier breakdown in `references/design-system-checklist.md`, informed by genuine current research rather than assumption.
-5. **Verify continuously across the full width range**, not only at the named tier boundaries — resize through the in-between widths and check that nothing breaks between the tiers you designed for.
+5. **Verify continuously across the full width range**, not only at the named tier boundaries — resize through the in-between widths and check that nothing breaks between the tiers you designed for. For visual work, also look at the rendered result at each tier and judge its design quality — distinctive and premium, or generic and repetitive — not only its correctness (see "Consistency is not sameness").
 6. **Re-audit the whole site after implementing**, the same way it was audited at the start, before calling the work done.
 7. **Ask first when something is ambiguous** — an apparent inconsistency that might be intentional, a device-support range that wasn't specified, a tradeoff between two valid approaches. Confirm, then proceed. (See "Judgment: when to ask, and when to just proceed" above.)

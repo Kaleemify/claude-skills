@@ -67,7 +67,7 @@ Menus, drawers, dropdowns, and modals hold content that may grow taller than the
 A component designed for a wide viewport is often the wrong component at a narrow one — not merely a smaller version of itself.
 
 - Multi-column mega-menus, image-rich navigation panels, side-by-side comparisons, and dense tables usually need a **different structure** on small screens, not scaled-down geometry.
-- Decorative imagery that supports a wide layout becomes noise or bulk on a small one. Remove it from the flow (`display: none`) rather than shrinking it — but confirm removal does not leave an empty grid cell or gap behind.
+- Decorative imagery designed for a wide layout needs its own small-screen treatment, not a mechanical shrink: re-crop it, reposition it, or swap in a mobile-specific variant so the small-screen design stays just as rich. Remove it from the flow (`display: none`) only when it genuinely adds nothing at that width — and then confirm removal does not leave an empty grid cell or gap behind.
 - Never leave functionality reachable only by hover. Touch devices have no hover; every hover-revealed action needs a tap-accessible path.
 
 ## Adjacent sections and rhythm
