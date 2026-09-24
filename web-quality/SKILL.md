@@ -40,7 +40,7 @@ Run the full protocol in `references/inspection-protocol.md`. Summary:
 3. **Visual scan** — walk each page top to bottom at the narrowest width in viewport-height slices. Look at *everything*, not only what you suspect.
 4. **Interactive pass** — open, expand, click, scroll, and close every interactive element and inspect the resulting state.
 5. **Seam pass** — inspect the boundary between adjacent sections.
-6. **Reasonable-person pass** — ask of each screen: would a paying client point at anything here?
+6. **Reasonable-person pass** — ask of each screen: would a paying client point at anything here? And does the design look generic, or like a template?
 
 Report findings with severity, location, cause, and fix. Do not report "clean" unless steps 2–6 all ran.
 

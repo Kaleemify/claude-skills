@@ -61,6 +61,8 @@ For each screen, ask plainly: **would a paying client point at anything here and
 
 This catches what no assertion can: spacing that reads as unfinished, an icon that does not match the others, a heading that looks accidentally small, a card that is emptier than its neighbours, imagery that undercuts the positioning, a layout that is technically correct and visually cheap.
 
+Then ask a second question of each screen: **does this design look generic, or like a template?** Typical signs: every section built from the same layout pattern (heading → paragraph → card grid, again and again), a hero that could belong to any site, identical cards everywhere, nothing specific to this brand or its content. A page can be free of defects and still be forgettable. Report "looks generic" as a real finding — with the section, what makes it read as a template, and what would make it distinctive — not as a matter of taste.
+
 If something looks slightly off, it is off. Investigate it rather than explaining it away.
 
 ---
